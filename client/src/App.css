@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.card-header {
+  background-color: rgb(38, 72, 146);
+  border-color: rgb(21, 44, 95);
+  color: white;
+}
+
+.card-body {
+  background-color: darkgrey;
+  border-color: rgb(136, 8, 8);
+}
+.list-item {
+  background-color: rgb(219, 217, 217);
+}
+
+.login-container {
+  padding-top: 10%;
+  height: 500px;
+  text-align: center;
+}
+@media only screen and (max-width: 1384px) {
+ 
+    .tv-lightweight-charts {
+      max-width: 600px
+    }
+  
+}
+
+@media only screen and (max-width: 1220px) {
+ 
+  .tv-lightweight-charts {
+    max-width: 400px
+  }
+
+}
