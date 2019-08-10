@@ -17,7 +17,7 @@ function SearchForm(props) {
         <br />
         <button onClick={props.handleFormMulti} className="btn btn-info">
           Search
-        </button>
+        </button><span>   </span>
         <button onClick={props.handleDBAdd} className="btn btn-info">
           Add To List
         </button>

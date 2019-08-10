@@ -19,7 +19,7 @@ class LoginPage extends Component{
 
         return (
             <Container fluid=" login-container">
-                    <Card heading={<h1>Welcome to the Stock Exchange!</h1>}>
+                    <Card heading={<h1>Welcome to the Idea Exchange!</h1>}>
                         
                         <Login responseGoogle={this.responseGoogle}/>
                         <br></br> <br></br> <br></br>

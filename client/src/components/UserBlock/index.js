@@ -7,7 +7,7 @@ import axios from 'axios';
 
 class User extends Component {
     state = {
-    username: "Phoenux",
+    username: "Brandon",
     pass: "",
     watchList: [ 'WORK', 'TERP', 'IBM', 'VIA', 'T' ]
   }
@@ -58,7 +58,9 @@ class User extends Component {
     
   }
 
-  render() {
+  
+
+  render(props) {
     return (
       <Col size="md-4">
       <Card heading={this.state.username} logout={<Logout />}>
@@ -67,7 +69,8 @@ class User extends Component {
           <div>
             <ListItem
               key={symbol}
-              name={symbol}         
+              name={symbol}      
+              // onClick={props.searchForThis}   
             />
             <br></br>
           </div>

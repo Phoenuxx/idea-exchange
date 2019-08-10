@@ -15,7 +15,7 @@ function createSimpleSwitcher(items, activeItem, activeItemChangedCallback) {
     const itemEl = document.createElement('button');
     itemEl.innerText = item;
     itemEl.classList.add('switcher-item');
-    itemEl.classList.add('btn-success');
+    itemEl.classList.add('btn-info');
     itemEl.classList.toggle('switcher-active-item', item === activeItem);
     itemEl.addEventListener('click', function () {
       onItemClicked(item);

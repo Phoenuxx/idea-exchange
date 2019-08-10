@@ -43,6 +43,13 @@
   height: 500px;
   text-align: center;
 }
+
+#root {
+  margin-top: 50px;
+  background-color: rgb(235, 230, 230);
+}
+
+
 @media only screen and (max-width: 1384px) {
  
     .tv-lightweight-charts {
