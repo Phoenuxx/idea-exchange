@@ -44,7 +44,7 @@ class Login extends Component {
                 onFailure={responseGoogleF}
                 scope="profile"
                 uxMode='redirect'
-                redirectUri={"http://localhost:3000/home"}
+                redirectUri={"https://secure-sierra-85761.herokuapp.com/home"}
                 cookiePolicy={'single_host_origin'}
             />
         );

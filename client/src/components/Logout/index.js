@@ -20,7 +20,7 @@ class Logout extends Component {
                 onLogoutSuccess={logout}
                 onFailure={responseGoogle}
                 uxMode='redirect'
-                redirectUri="http://localhost:3000/"
+                redirectUri="https://secure-sierra-85761.herokuapp.com"
             >
 
             </GoogleLogout>
