@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { createChart } from 'lightweight-charts';
+import Row from '../Row';
 import Col from "../Col";
 import Card from "../Card";
 import SearchForm from "../SearchForm";
 // import MovieDetail from "./MovieDetail";
 import API from "../../utils/API";
+import UserBlock from '../UserBlock';
 // const axios = require('axios');
 
 function createSimpleSwitcher(items, activeItem, activeItemChangedCallback) {
@@ -114,8 +116,6 @@ class GraphContainer extends Component {
   state = {
     search: ""
   };
-
-
 
   // When this component mounts, search for the movie "The Matrix"
   componentDidMount() {
@@ -303,7 +303,7 @@ class GraphContainer extends Component {
     this.setState({
       [name]: value
     });
-  };
+  }
 
   // When the form is submitted, search the Alpha Vantage API for the value of `this.state.search`
   handleFormMulti = event => {
@@ -315,25 +315,9 @@ class GraphContainer extends Component {
     this.searchMonthly(this.state.search);
   };
 
-addToList = event => {
-  // db.User.find({where: {username: req.process.username}})
-  // .then(function(dbUser) {
-  //   // If we were able to successfully find User, send them back to the client
-  //   console.log(dbUser);
-  //   res.json(dbUser);
-  // })
-  // .catch(function(err) {
-  //   // If an error occurred, send it to the client
-  //   res.json(err);
-  // });
-  // axios.post('localhost:27017/StockExchangeDB'), {
-    
-  // }
-  // const itemToAdd = this.state.search
-}
-
   render() {
     return (
+      
       <Col size="md-8">
         <Card heading="Search a Stock">
           <SearchForm
@@ -344,6 +328,7 @@ addToList = event => {
           />
         </Card>
       </Col>
+      
     );
   }
 }

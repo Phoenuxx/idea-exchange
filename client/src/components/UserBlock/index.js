@@ -7,11 +7,15 @@ import axios from 'axios';
 
 class User extends Component {
     state = {
-    username: "Brandon",
+    username: "",
     pass: "",
-    watchList: [ 'WORK', 'TERP', 'IBM', 'VIA', 'T' ]
+    watchList: []
   }
 
+
+  constructor(props) {
+    super(props);
+  }
   getDataFromDb = () => {
     axios.get('http://localhost:8080/api/getData/' + this.state.username)
     .then((response) => {
@@ -69,8 +73,8 @@ class User extends Component {
           <div>
             <ListItem
               key={symbol}
-              name={symbol}      
-              // onClick={props.searchForThis}   
+              name={symbol} 
+
             />
             <br></br>
           </div>
