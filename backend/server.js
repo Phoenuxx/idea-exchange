@@ -68,12 +68,21 @@ router.get('/getData/:username', (req, res) => {
   });
 });
 
-router.post('/updateData', (req, res) => {
-  const { id, update } = req.body;
-  User.findByIdAndUpdate(id, update, (err) => {
+router.post('/putData', (req, res) => {
+  let model = new Model();
+
+  const { username, googleID } = req.body;
+
+  model.username = username;
+  model.googleID = googleID;
+  model.save((err) => {
     if (err) return res.json({ success: false, error: err });
     return res.json({ success: true });
   });
+});
+
+router.post('/updateData', (req, res) => {
+
 });
 
 app.get('/user/:username', function(req,res) { 

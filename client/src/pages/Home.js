@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import Card from '../components/Card';
 import Container from '../components/Container';
 import Login from "../components/Login";
@@ -12,23 +13,40 @@ class LoginPage extends Component {
     googleID: 0,
     loggedIn: false
   }
+  
+  constructor(props) {
+  super(props);
  
-  render() {
+  this.responseGoogle = this.responseGoogle.bind(this);
+}
 
-     const responseGoogle = (response) => {
-      console.log(response);
-      console.log(response.profileObj);
-      console.log(response.profileObj.googleId);
-      console.log(response.profileObj.name);
-      
-      this.setState({
-        username: response.profileObj.name,
-        googleID: response.profileObj.googleId,
-        loggedIn: true
-      });
-      console.log('login page state vvv');
-      console.log(this.state);
-    }
+ responseGoogle = (response) => {
+  console.log(response);
+  console.log(response.profileObj);
+  console.log(response.profileObj.googleId);
+  console.log(response.profileObj.name);
+  
+  this.setState({
+    username: response.profileObj.name,
+    googleID: response.profileObj.googleId,
+    loggedIn: true
+  });
+  console.log('login page state vvv');
+  console.log(this.state);
+
+};
+
+putDataToDB = (message) => {
+  let newUsername = this.state.username
+  let newGoogleID = this.state.googleID
+
+  axios.post('http://localhost:3001/api/putData', {
+    username: newUsername,
+    googleID: newGoogleID
+  });
+};
+
+  render() {
 
     return (
       !this.state.loggedIn ? (

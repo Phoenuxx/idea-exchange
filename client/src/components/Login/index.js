@@ -7,28 +7,15 @@ import { GoogleLogin } from 'react-google-login';
 
 class Login extends Component {
   state = {
-    username: "",
+    username: "User",
     googleID: null,
     loggedIn: false
   }
 
     render(props) {
-
-        console.log(props);
-        const responseGoogle = (response) => {
-          console.log(response);
-          console.log(response.profileObj);
-          console.log(response.profileObj.googleId);
-          console.log(response.profileObj.name);
-          
-          this.setState({
-            username: response.profileObj.name,
-            googleID: response.profileObj.googleId,
-            loggedIn: true
-          });
-          console.log('login page state vvv');
-          console.log(this.state);
-        }
+        console.log("props vvv");
+        console.log(this.props);
+        
           const responseGoogleF = (response) => {
             console.log(response);
 
@@ -40,11 +27,11 @@ class Login extends Component {
             <GoogleLogin
                 clientId="538074270661-hpd1f2m486cbm2jomvfr3vurqhqkmelr.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
                 buttonText="LOGIN WITH GOOGLE"
-                onSuccess={responseGoogle}
+                onSuccess={this.props.responseGoogle}
                 onFailure={responseGoogleF}
                 scope="profile"
                 uxMode='redirect'
-                redirectUri={"https://secure-sierra-85761.herokuapp.com/home"}
+                redirectUri={"localhost:3000"}
                 cookiePolicy={'single_host_origin'}
             />
         );
